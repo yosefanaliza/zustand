@@ -1,0 +1,268 @@
+.app-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  border: 1px solid rgba(23, 32, 42, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 40px rgba(23, 32, 42, 0.08);
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9a6b17;
+}
+
+.brand,
+.page-copy h2,
+.product-card h2,
+.cart-item h3,
+.summary-card h3,
+.empty-state h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: #4a5563;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
+  background: #f2ede2;
+  color: #17202a;
+}
+
+.nav-link-active {
+  background: #17202a;
+  color: #fffaf0;
+}
+
+.cart-link {
+  border: 1px solid rgba(23, 32, 42, 0.08);
+}
+
+.cart-count {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 28px;
+  min-height: 28px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #f5c46e;
+  color: #17202a;
+  font-weight: 700;
+}
+
+.page-shell {
+  margin-top: 28px;
+}
+
+.page-copy {
+  margin-bottom: 24px;
+}
+
+.page-copy p:last-child {
+  max-width: 720px;
+  margin-bottom: 0;
+  color: #4a5563;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.product-card,
+.summary-card,
+.empty-state {
+  border: 1px solid rgba(23, 32, 42, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 16px 34px rgba(23, 32, 42, 0.08);
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.product-image {
+  display: grid;
+  place-items: center;
+  min-height: 110px;
+  font-size: 3rem;
+  background:
+    linear-gradient(135deg, rgba(245, 196, 110, 0.35), rgba(87, 150, 255, 0.18)),
+    #fffaf2;
+}
+
+.product-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.product-category {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9a6b17;
+}
+
+.product-description,
+.cart-item-text {
+  color: #4a5563;
+}
+
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.quantity {
+  font-size: 0.95rem;
+  color: #4a5563;
+}
+
+.card-actions,
+.cart-panel {
+  display: flex;
+  gap: 12px;
+}
+
+.card-actions {
+  margin-top: 16px;
+}
+
+.primary-button,
+.secondary-button {
+  border: 0;
+  border-radius: 14px;
+  padding: 11px 14px;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.primary-button {
+  background: #17202a;
+  color: #fffaf0;
+}
+
+.secondary-button {
+  background: #f2ede2;
+  color: #17202a;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-1px);
+}
+
+.secondary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.cart-panel {
+  align-items: flex-start;
+}
+
+.cart-list {
+  display: grid;
+  flex: 1;
+  gap: 14px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid rgba(23, 32, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.summary-card,
+.empty-state {
+  padding: 24px;
+}
+
+.summary-card {
+  width: min(100%, 280px);
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    width: min(100%, calc(100% - 20px));
+    padding-top: 16px;
+  }
+
+  .navbar,
+  .cart-panel,
+  .card-actions,
+  .cart-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-links,
+  .product-meta {
+    width: 100%;
+  }
+
+  .nav-links {
+    justify-content: space-between;
+  }
+
+  .summary-card {
+    width: 100%;
+  }
+}
