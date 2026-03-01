@@ -1,22 +1,47 @@
 import { Route, Routes } from 'react-router'
 import './App.css'
-import CartPage from './components/CartPage'
+import CartPage from './pages/CartPage'
 import Navbar from './components/Navbar'
-import ShopPage from './components/ShopPage'
+import ShopPage from './pages/ShopPage'
+import { createContext, useState } from 'react'
+
+const Context = createContext()
 
 function App() {
-  return (
-    <div className="app-shell">
-      <Navbar />
+  const [state, setState] = useState()
+  const [cart, setCart] = useState([])
+  const [todos, setTodos] = useState([])
 
-      <main>
-        <Routes>
-          <Route path="/" element={<ShopPage />} />
-          <Route path="/cart" element={<CartPage />} />
-        </Routes>
-      </main>
-    </div>
+  const addToCart = (item) => {
+    setCart((prevCart) => [...prevCart, item])
+  }
+
+  return (
+    <Context.Provider value={{ state, cart, todos }}>
+
+      <div className="app-shell">
+        <Navbar />
+
+        <main>
+          <Routes>
+            <Route path="/" element={<ShopPage />} />
+            <Route path="/cart" element={<CartPage />} />
+          </Routes>
+        </main>
+      </div>
+
+    </Context.Provider>
   )
 }
 
 export default App
+
+function ChildComponent() {
+  const { state } = useContext(Context)
+
+  return (
+    <div>
+      <p>State: {state}</p>
+    </div>
+  )
+}

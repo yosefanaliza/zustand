@@ -3,6 +3,10 @@ import { create } from 'zustand'
 export const useCartStore = create((set) => ({
   cart: [],
 
+  removeFromCart: (productId) => set((state) => {
+    return state.filter(p => p.id !== productId)
+  }),
+
   addToCart: (product) =>
     set((state) => {
       const productIsInCart = state.cart.some((item) => item.id === product.id)
@@ -15,11 +19,6 @@ export const useCartStore = create((set) => ({
         cart: [...state.cart, product],
       }
     }),
-
-  removeFromCart: (productId) =>
-    set((state) => ({
-      cart: state.cart.filter((item) => item.id !== productId),
-    })),
 
   clearCart: () => set({ cart: [] }),
 }))

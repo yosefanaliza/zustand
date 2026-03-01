@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router'
 import { useCartStore } from '../store/useCartStore'
+import { useContext } from 'react'
 
 function Navbar() {
   const cart = useCartStore((state) => state.cart)
